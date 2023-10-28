@@ -1,0 +1,42 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "description": "React + Vite + Typescript + Nodejs template",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "start:client": "vite client",
+    "start:server": "nodemon",
+    "build": "concurrently \"npm run build:server\" \"npm run build:client\"",
+    "prebuild": "npm run clear",
+    "build:client": "tsc --project client/tsconfig.json && vite build client",
+    "build:server": "tsc --project server/tsconfig.json",
+    "clear": "rimraf build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/user/repository.git"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "author": "lehaisanya <lehaisanya@gmail.com>",
+  "license": "ISC"
+}
